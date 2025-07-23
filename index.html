@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spa</title>
+    <title>Rising Sun Massage</title>
     <meta
       name="description"
-      content="Experience ultimate relaxation at the Spa, known for exceptional massages tailored to your needs. Clients love our serene environment, skilled therapists, and personalized care. Unwind and recharge with us."
+      content="Experience ultimate relaxation at Rising Sun Massage, known for exceptional massages and reflexology treatments tailored to your needs. Located in Spring Hill, FL with skilled therapists and personalized care."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +16,7 @@
       rel="stylesheet"
     />
     <style>
-      /* Greenpoint Spa Stylesheet */
+      /* Rising Sun Massage Stylesheet */
 
       /* Base Styles */
       body {
@@ -53,23 +53,76 @@
       /* Navigation */
       nav {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        padding: 1rem;
-        background-color: #4CAF50; /* Healthy green background */
+        padding: 1rem 2rem;
+        background: linear-gradient(135deg, #ff6b35, #f7931e); /* Orange gradient like logo */
         position: fixed;
         top: 0;
         width: 100%;
         z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-icon {
+        width: 50px;
+        height: 50px;
+        background: radial-gradient(circle, #f7931e 30%, #ff6b35 70%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .logo-icon::before {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: linear-gradient(45deg, #ffd700 0%, #ff6b35 50%, #f7931e 100%);
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .logo-icon::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        background: #ffd700;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 
+          0 4px 0 #ffd700,
+          0 8px 0 #ffd700,
+          0 12px 0 #ffd700,
+          0 16px 0 #ffd700,
+          0 20px 0 #ffd700,
+          0 24px 0 #ffd700,
+          0 28px 0 #ffd700;
+      }
+
+      .logo h1 {
+        color: white;
+        margin: 0;
+        font-size: 1.8rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
       }
 
       /* Add margin to the top of the body to avoid content being hidden behind the fixed nav */
       body {
-        margin-top: 70px; /* Adjust based on nav height */
-      }
-
-      nav img {
-        height: 50px;
+        margin-top: 80px;
       }
 
       nav ul {
@@ -80,23 +133,26 @@
       }
 
       nav ul li {
-        margin-left: 20px;
+        margin-left: 25px;
       }
 
       nav ul li a {
         color: white;
         text-decoration: none;
         font-size: 1.1rem;
-        transition: color 0.3s ease;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
       }
 
       nav ul li a:hover {
-        color: #ff6f61;
+        color: #ffd700;
+        transform: translateY(-2px);
       }
 
       /* Home Section */
       .home {
-        background-image: url('2.avif');
+        background: linear-gradient(135deg, rgba(255, 107, 53, 0.9), rgba(247, 147, 30, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffd700" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ff6b35" stop-opacity="0.05"/></radialGradient></defs><rect width="100%" height="100%" fill="url(%23a)"/></svg>');
         background-size: cover;
         background-position: center;
         height: 100vh;
@@ -105,224 +161,334 @@
         justify-content: center;
         color: white;
         text-align: center;
-        margin-top: 70px;
-        background-color: #e8f5e9; /* Light green background as fallback */
+        margin-top: 80px;
       }
 
       .home-content {
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 30px;
-        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 40px;
+        border-radius: 15px;
         max-width: 800px;
+        backdrop-filter: blur(5px);
       }
 
       .home h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
         margin-bottom: 20px;
+        text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        background: linear-gradient(45deg, #ffd700, #fff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .home p {
+        font-size: 1.3rem;
+        margin-bottom: 30px;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
       }
 
       /* Button Styles */
       .book-button {
-        background-color: #ff6f61;
+        background: linear-gradient(135deg, #ff6b35, #f7931e);
         color: white;
-        padding: 12px 25px;
+        padding: 15px 30px;
         border: none;
-        border-radius: 5px;
+        border-radius: 25px;
         text-decoration: none;
         display: inline-block;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: 600;
         transition: all 0.3s ease;
         margin-top: 20px;
         cursor: pointer;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
       }
 
       .book-button:hover {
-        background-color: #e55a4d;
+        background: linear-gradient(135deg, #e55a4d, #e6841a);
         transform: translateY(-3px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
       }
 
-      /* Services and Reviews Containers */
-      .services, .reviews-container {
+      /* Services Container */
+      .services {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px;
-        margin: 30px 0;
-        background-color: #f5f5dc; /* Wheat background for services and reviews */
+        gap: 30px;
+        margin: 40px 0;
       }
 
       #services {
-        background-color: #f5f5dc;
+        background: linear-gradient(135deg, #fff5f0, #ffeee6);
       }
 
-      /* Service Box and Review Card */
-      .service-box, .review-card {
-        background-color: white;
+      /* Service Box */
+      .service-box {
+        background: linear-gradient(135deg, #ffffff, #fefefe);
         margin: 10px;
-        padding: 25px;
-        border-radius: 8px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        width: 300px;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(255, 107, 53, 0.15);
+        width: 350px;
         transition: all 0.3s ease;
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #ff6b35, #f7931e, #ffd700);
       }
 
       .service-box:hover {
-        transform: scale(1.05);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        transform: scale(1.05) translateY(-5px);
+        box-shadow: 0 15px 35px rgba(255, 107, 53, 0.25);
+        border-color: #ff6b35;
       }
 
-      .service-box h3, .review-card h3 {
-        color: #ff6f61;
-        font-size: 1.5rem;
+      .service-box h3 {
+        color: #ff6b35;
+        font-size: 1.6rem;
         margin-bottom: 15px;
+        text-align: center;
       }
 
-      .service-box p, .review-card p {
+      .service-box p {
         color: #666;
-        line-height: 1.6;
+        line-height: 1.7;
+        font-size: 1.1rem;
+        text-align: center;
       }
 
-      /* Price Wrapper */
-      .service-box .price-wrapper {
-        margin-top: 15px;
-        background-color: #f8f8f8;
-        padding: 10px;
-        border-radius: 5px;
-        display: none; /* Hidden by default */
-        min-height: 128px;
+      /* Pricing Section */
+      #pricing {
+        background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
       }
 
-      .price-wrapper h4 {
-        margin: 5px 0;
-        color: #333;
+      .pricing-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        margin: 40px 0;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .pricing-category {
+        background: linear-gradient(135deg, #ffffff, #fefefe);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
+        width: 450px;
+        border: 3px solid #ff6b35;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pricing-category::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(90deg, #ff6b35, #f7931e, #ffd700);
+      }
+
+      .pricing-category h3 {
+        color: #ff6b35;
+        font-size: 2rem;
+        margin-bottom: 25px;
+        text-align: center;
+        border-bottom: 3px solid #ff6b35;
+        padding-bottom: 15px;
+      }
+
+      .pricing-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      .pricing-table th {
+        background: linear-gradient(135deg, #ff6b35, #f7931e);
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .pricing-table td {
+        padding: 12px 15px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
         font-size: 1.1rem;
       }
 
-      /* Review Card Specific */
-      .review-card {
-        text-align: left;
-        cursor: pointer;
+      .pricing-table tr:nth-child(even) {
+        background-color: #fafafa;
       }
 
-      .review-card h3 {
-        color: gold;
-        margin-bottom: 10px;
-      }
-
-      .review-text {
-        font-style: italic;
-        margin-bottom: 10px;
-      }
-
-      .review-author {
-        text-align: right;
+      .duration {
         font-weight: 600;
         color: #333;
       }
 
-      .review-card.active {
-        transform: scale(1.05);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      .price {
+        font-weight: 700;
+        color: #ff6b35;
       }
 
-      /* Appointment Section */
+      .cash-price {
+        color: #2e7d32;
+      }
+
+      .card-price {
+        color: #d32f2f;
+      }
+
+      /* Contact Section */
       #contact {
-        background-color: #e0f7fa; /* Light blue background for contact section */
-      }
-      #specials {
-        background-color: #e0f7fa;
-      }
-      
-      #specials .services{
-        background-color: #e0f7fa;
+        background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
       }
 
-      .appointment-card {
+      .contact-container {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        max-width: 1200px;
+        max-width: 1000px;
         margin: 0 auto;
+        gap: 40px;
       }
 
-      .appointment-map {
+      .contact-info {
+        background: linear-gradient(135deg, #ffffff, #fefefe);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
+        flex: 1;
+        min-width: 300px;
+        border: 2px solid #ff6b35;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-info::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(90deg, #ff6b35, #f7931e, #ffd700);
+      }
+
+      .contact-info h3 {
+        color: #ff6b35;
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+
+      .contact-details p {
+        margin: 20px 0;
+        font-size: 1.2rem;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        background-color: white;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        justify-content: center;
+        gap: 10px;
       }
 
-      .appointment-map iframe {
-        border-radius: 8px;
-        max-width: 100%;
+      .contact-details strong {
+        color: #ff6b35;
+        min-width: 120px;
       }
 
-      .appointment-info {
-        margin-top: 25px;
-        text-align: left;
-        width: 100%;
-      }
-
-      .appointment-info p {
-        margin: 10px 0;
-        font-size: 1.1rem;
-      }
-
-      .appointment-info a {
-        color: #ff6f61;
+      .contact-details a {
+        color: #ff6b35;
         text-decoration: none;
-        transition: color 0.3s ease;
+        transition: all 0.3s ease;
+        font-weight: 600;
       }
 
-      .appointment-info a:hover {
+      .contact-details a:hover {
         color: #e55a4d;
         text-decoration: underline;
+        transform: scale(1.05);
       }
 
-      .appointment-map h3 {
-        margin-top: 20px;
-        color: #ff6f61;
+      .hours-highlight {
+        background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(247, 147, 30, 0.1));
+        padding: 20px;
+        border-radius: 15px;
+        margin: 25px 0;
+        border: 2px solid #ff6b35;
+      }
+
+      .hours-highlight p {
+        color: #ff6b35;
         font-size: 1.3rem;
+        font-weight: 700;
+        margin: 0;
+        text-align: center;
       }
 
       /* Footer */
       footer {
-        background-color: #333;
+        background: linear-gradient(135deg, #333, #555);
         color: white;
         text-align: center;
-        padding: 20px 0;
+        padding: 30px 0;
         margin-top: 50px;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 1.1rem;
       }
 
       /* Responsive Design */
       @media (max-width: 768px) {
         nav {
           flex-direction: column;
-          padding: 10px;
+          padding: 15px;
+        }
+        
+        .logo h1 {
+          font-size: 1.5rem;
         }
         
         nav ul {
           margin-top: 15px;
         }
         
+        nav ul li {
+          margin-left: 15px;
+        }
+        
         .home h1 {
-          font-size: 2.2rem;
+          font-size: 2.5rem;
         }
         
-        .service-box, .review-card {
+        .service-box, .pricing-category {
           width: 100%;
-          max-width: 350px;
+          max-width: 400px;
         }
         
-        .appointment-map iframe {
-          width: 100%;
-          height: 350px;
+        .contact-container {
+          flex-direction: column;
         }
       }
 
@@ -336,15 +502,21 @@
         }
         
         .home-content {
-          padding: 20px;
+          padding: 25px;
         }
         
         .home h1 {
-          font-size: 1.8rem;
+          font-size: 2rem;
         }
         
         .book-button {
-          padding: 10px 20px;
+          padding: 12px 25px;
+          font-size: 1.1rem;
+        }
+        
+        .pricing-table th,
+        .pricing-table td {
+          padding: 8px;
           font-size: 1rem;
         }
       }
@@ -352,135 +524,198 @@
   </head>
 
   <body>
-    <!-- Navbar - No changes needed, styles added in CSS -->
+    <!-- Navbar -->
     <nav>
-      <!-- <a href="#home"><img src="https://CLOUDSspa.com/wp-content/uploads/2021/03/CLOUDS-spa-logo.png" alt="Spa Logo" /></a> -->
+      <div class="logo">
+        <div class="logo-icon"></div>
+        <h1>Rising Sun Massage</h1>
+      </div>
       <ul>
         <li><a href="#services">Services</a></li>
-        <li><a href="#specials">Specials</a></li>
-        <!-- <li><a href="#reviews">Reviews</a></li> -->
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
-    <!-- home Section - Added background image and light green fallback in CSS -->
+    <!-- Home Section -->
     <section id="home" class="home">
       <div class="home-content">
-        <h1>Indulge in Tranquility and Rejuvenation</h1>
-        <a href="#contact" class="book-button">Book a Session</a>
+        <h1>Rising Sun Massage</h1>
+        <p>Experience ultimate relaxation and rejuvenation in Spring Hill, Florida</p>
+        <a href="#contact" class="book-button">Book Your Session</a>
       </div>
     </section>
 
-    <!-- Services Section - Added wheat background in CSS -->
+    <!-- Services Section -->
     <section id="services">
       <h2>Our Services</h2>
-      <h4>Tap or hover to get pricing information</h4>
+      <h4>Professional massage and reflexology treatments</h4>
       <div class="services">
         <div class="service-box">
-          <h3>Swedish Massage</h3>
+          <h3>Body Massage</h3>
           <p>
-            Swedish massage is a traditional European massage technique that employs essential oils to relax the body's muscles to promote blood circulation.
+            Relax and rejuvenate with our professional full body massage treatments. Our skilled therapists use various techniques to relieve tension, improve circulation, and promote overall wellness. Available in 30, 60, 90, and 120-minute sessions.
           </p>
-          <div class="price-wrapper">
-            <h4>Call for consultation</h4>
-          </div>
         </div>
-        <!-- 其他服务项目类似，省略以节省空间 -->
-      </div>
-      <!-- <a href="#contact" class="book-button">Book a Session</a> -->
-    </section>
-
-    <!-- Specials Section - Added wheat background via CSS class -->
-    <section id="specials">
-      <h2>Special Recommendations</h2>
-      <h4>Tap or hover to get pricing information</h4>
-      <div class="services">
+        
         <div class="service-box">
-          <h3>Shiatzu</h3>
+          <h3>Head Reflexology</h3>
           <p>
-            Experience the traditional Shiatsu technique, where gentle and gradual pressure using the palms relieves fatigue and promotes deep relaxation throughout the entire body.
+            Experience the therapeutic benefits of head reflexology. This ancient healing practice focuses on pressure points in the head and scalp to promote relaxation, reduce stress, and improve mental clarity. Perfect for relieving headaches and tension.
           </p>
-          <div class="price-wrapper">
-            <h4>Call for consultation</h4>
-          </div>
         </div>
-        <!-- 其他特殊推荐类似，省略以节省空间 -->
+        
+        <div class="service-box">
+          <h3>Foot Reflexology</h3>
+          <p>
+            Restore balance and energy through the art of foot reflexology. By applying pressure to specific points on the feet, this treatment helps improve circulation, reduce stress, and promote natural healing throughout your entire body.
+          </p>
+        </div>
       </div>
-      <!-- <a href="#contact" class="book-button">Book a Session</a> -->
     </section>
 
-    <!-- Reviews Section - Added wheat background via CSS class -->
-    <section id="reviews" style="display: none;">
-      <h2>What Our Clients Say</h2>
-      <div class="reviews-container">
-        <div class="review-card">
-          <h3>⭐️⭐️⭐️⭐️⭐️</h3>
-          <p class="review-text">
-            "I've been going here consistently for the past couple months and have had a great experience every time. The staff is kind, caring, and can get out any kink in my neck!"
-          </p>
-          <p class="review-author">- Anne Marie. B.</p>
+    <!-- Pricing Section -->
+    <section id="pricing">
+      <h2>Price List</h2>
+      <h4>Competitive rates with cash and credit card options</h4>
+      <div class="pricing-container">
+        <div class="pricing-category">
+          <h3>Body Massage</h3>
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Duration</th>
+                <th>Cash Price</th>
+                <th>Credit Card</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="duration">30 minutes</td>
+                <td class="price cash-price">$50</td>
+                <td class="price card-price">$53</td>
+              </tr>
+              <tr>
+                <td class="duration">60 minutes</td>
+                <td class="price cash-price">$70</td>
+                <td class="price card-price">$73</td>
+              </tr>
+              <tr>
+                <td class="duration">90 minutes</td>
+                <td class="price cash-price">$115</td>
+                <td class="price card-price">$118</td>
+              </tr>
+              <tr>
+                <td class="duration">120 minutes</td>
+                <td class="price cash-price">$135</td>
+                <td class="price card-price">$138</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <!-- 其他评价类似，省略以节省空间 -->
+        
+        <div class="pricing-category">
+          <h3>Head or Foot Reflexology</h3>
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Duration</th>
+                <th>Cash Price</th>
+                <th>Credit Card</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="duration">30 minutes</td>
+                <td class="price cash-price">$50</td>
+                <td class="price card-price">$53</td>
+              </tr>
+              <tr>
+                <td class="duration">60 minutes</td>
+                <td class="price cash-price">$70</td>
+                <td class="price card-price">$73</td>
+              </tr>
+              <tr style="opacity: 0.5;">
+                <td colspan="3" style="text-align: center; font-style: italic; color: #666;">
+                  90+ minute sessions available upon request
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <!-- <a href="#contact" class="book-button">Book a Session</a> -->
+      <a href="#contact" class="book-button">Book Your Session</a>
     </section>
 
-    <!-- Contact Section - Added light blue background in CSS -->
+    <!-- Contact Section -->
     <section id="contact">
-      <h2>Make an Appointment</h2>
-      <div class="appointment-card">
-        <div class="appointment-map">
-
-
-
-
-
-
-          <div class="appointment-info">
+      <h2>Contact & Location</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Visit Us Today</h3>
+          <div class="contact-details">
             <p>
-              <strong>Call to book:</strong>
-              <a href="tel:+1-740-405-2698">740-405-2698</a>
+              <strong>📞 Phone:</strong>
+              <a href="tel:+1-352-610-6021">352-610-6021</a>
             </p>
             <p>
-              <strong>Our Location:</strong>
-              <a
-                href="location.jpeg"
-                >2443 Maple Ave.Zaesville Ohio 43701</a
-              >
+              <strong>📍 Address:</strong>
+              <span>3496 Deltona Blvd<br>Spring Hill, FL 34606</span>
             </p>
-            <p><strong></strong>Open 7 DaysMON-SAT 1OAM.9PMSUN 12PM-7PM</p>
+            <div class="hours-highlight">
+              <p>🕘 Open 7 Days a Week</p>
+              <p>Monday - Sunday: 9:00 AM - 9:30 PM</p>
+            </div>
+            <p style="text-align: center; margin-top: 30px; font-size: 1.1rem; color: #666;">
+              <strong>Walk-ins Welcome!</strong><br>
+              Call ahead to ensure availability
+            </p>
           </div>
-          <h3>Gift Certificate Available - Call to learn more.</h3>
         </div>
       </div>
     </section>
 
-    <!-- Footer - No changes needed, maintains dark style -->
+    <!-- Footer -->
     <footer>
-      <p>&copy; 2025 Spa. All Rights Reserved.</p>
+      <p>&copy; 2025 Rising Sun Massage. All Rights Reserved.</p>
     </footer>
 
     <script>
-      // Modify service-box interaction to show/hide price-wrapper on hover
-      document.querySelectorAll('.service-box').forEach(box => {
-        const priceWrapper = box.querySelector('.price-wrapper');
-        const descriptionText = box.querySelector('p');
-
-        box.addEventListener('mouseenter', () => {
-          priceWrapper.style.display = 'block';
-          descriptionText.style.display = 'none'; // Hide paragraph text on hover
-        });
-
-        box.addEventListener('mouseleave', () => {
-          priceWrapper.style.display = 'none';
-          descriptionText.style.display = ''; // Restore paragraph visibility
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
         });
       });
 
-      // Reviews interaction remains unchanged
-      document.querySelectorAll('.review-card').forEach(card => {
-        card.addEventListener('click', () => {
-          card.classList.toggle('active');
+      // Add scroll effect to navbar
+      window.addEventListener('scroll', function() {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 100) {
+          nav.style.backgroundColor = 'rgba(255, 107, 53, 0.95)';
+          nav.style.backdropFilter = 'blur(10px)';
+        } else {
+          nav.style.backgroundColor = 'transparent';
+          nav.style.background = 'linear-gradient(135deg, #ff6b35, #f7931e)';
+          nav.style.backdropFilter = 'none';
+        }
+      });
+
+      // Add hover effects to service boxes
+      document.querySelectorAll('.service-box').forEach(box => {
+        box.addEventListener('mouseenter', function() {
+          this.style.transform = 'scale(1.05) translateY(-5px)';
+        });
+        
+        box.addEventListener('mouseleave', function() {
+          this.style.transform = 'scale(1) translateY(0)';
         });
       });
     </script>
